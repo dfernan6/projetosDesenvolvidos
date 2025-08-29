@@ -1,18 +1,30 @@
 import React from 'react';
-//import './ColorPalette.css';
 
-function ColorPalette({ colors, selectedColor, onSelectColor }) {
+function ColorPalette({ colors, selectedColors, setSelectedColors }) {
+  function handleColorClick(color) {
+    setSelectedColors(prev =>
+      prev.includes(color)
+        ? prev.filter(c => c !== color)
+        : [...prev, color]
+    );
+  }
+
   return (
-    <ul className="colors-ul">
+    <div style={{ display: 'flex', gap: '10px' }}>
       {colors.map((color, index) => (
-        <li
+        <div
           key={index}
-          className={`color ${selectedColor === color ? 'selected' : ''}`}
-          style={{ backgroundColor: color }}
-          onClick={() => onSelectColor(color)}
+          onClick={() => handleColorClick(color)}
+          style={{
+            backgroundColor: color,
+            width: '40px',
+            height: '40px',
+            border: selectedColors.includes(color) ? '3px solid #000' : '1px solid #ccc',
+            cursor: 'pointer'
+          }}
         />
       ))}
-    </ul>
+    </div>
   );
 }
 
