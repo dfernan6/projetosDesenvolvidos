@@ -1,16 +1,14 @@
 import './globals.css';
-import { Providers } from '../app/provider/providers';
+import { ClienteProvider } from "./components/ClientContext";
+import { ReactNode } from "react";
 
-export const metadata = {
-  title: 'Sabores da Lolô',
-  description: 'Delícias artesanais direto da cozinha da Lolô',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html>
       <body>
-        <Providers>{children}</Providers>
+        <ClienteProvider>
+          {children}
+        </ClienteProvider>
       </body>
     </html>
   );
