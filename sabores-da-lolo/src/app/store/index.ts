@@ -1,8 +1,10 @@
+// src/app/store/index.ts
 import { configureStore } from '@reduxjs/toolkit';
+import saboresReducer from '../features/sabores/saboresSlice';
 
 export const store = configureStore({
   reducer: {
-    // seus reducers aqui
+    sabores: saboresReducer,
   },
 });
 

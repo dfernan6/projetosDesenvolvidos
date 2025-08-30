@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.firstView {
+      display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    margin-top: -20px;
+}
+
+.internalView{
+  max-width: 400px;
+  max-height: 400px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Em seu CSS global */
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c49a6c;
+  border-radius: 4px;
+}
